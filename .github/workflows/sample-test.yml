@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Install Postman CLI
-        run: brew install postman
+        run: brew install postman-cli
 
       - name: Run sample collection 
         run: |
