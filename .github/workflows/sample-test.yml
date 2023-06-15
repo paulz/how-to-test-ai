@@ -1,0 +1,17 @@
+name: Sample Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Install Postman CLI
+        run: brew install postman
+
+      - name: Run sample collection 
+        run: |
+          postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+          postman collection run ${{ vars.COLLECTION_ID }}
